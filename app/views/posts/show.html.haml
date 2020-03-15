@@ -1,13 +1,32 @@
-%table.table.table-responsive
+%table.table.table-responsive.table-hover
   %tr
-    %th
+    %td{:colspan => "2"}
       = image_tag @post.image.to_s,size:"150x150", alt: "test" ,class: 'post__image'
   %tr
     %th
-      タイトル：#{@post.title}
+      タイトル
+    %td
+      #{@post.title}
   %tr
     %th
-      コンテンツ：#{@post.content}
+      コンテンツ
+    %td
+      #{@post.content}
+  %tr
+    %th
+      時給：
+    %td
+      #{@post.wage}
+  %tr
+    %th
+      勤務日
+    %td
+      #{@post.date}
+  %tr
+    %th
+      勤務時間帯
+    %td
+      #{@post.timezone}
   %tr
     %th
       = link_to "リクエスト", new_post_request_path(@post.id), class: 'btn btn-primary'

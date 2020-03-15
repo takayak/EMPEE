@@ -10,18 +10,16 @@
   .flex
     - @posts.each do |post|
       .post
-       
         %table.table.table-hover.table-responsive
           %tr
             %th
               .image
                 = link_to post_path(post.id) do
                   = image_tag post.image.to_s,size:"200x200", alt: "test" ,class: 'post__image'
-              
           %tr
             %td
               = post.title
           %tr
             %td
-              = post.content
+              #{post.wage}円
         

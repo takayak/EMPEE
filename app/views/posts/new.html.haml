@@ -1,13 +1,41 @@
 .form
   = form_for @post do |f|
-    .div
-      タイトル：
-      = f.text_field :title, class: 'form__message', placeholder: 'type a message'
-    .div
-      業務説明：
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = icon('fas', 'image', class: 'icon fa-2x')
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form__submit'
+    %table.table.table-hover.table-responsive
+      %tr.table-dark
+        %th
+        %td
+          募集内容記入
+      %tr
+        %th
+          タイトル
+        %td
+          = f.text_field :title, class: 'form__message', placeholder: '募集タイトル'
+      %tr
+        %th
+          業務説明
+        %td
+          = f.text_field :content, class: 'form__message', placeholder: '業務説明'
+      %tr
+        %th
+          時給
+        %td
+          = f.text_field :wage, class: 'form__message', placeholder: '時給'
+      %tr
+        %th
+          日付
+        %td
+          = f.text_field :date, class: 'form__message', placeholder: '2020/4/10'
+      %tr
+        %th
+          時間帯
+        %td
+          = f.text_field :timezone, class: 'form__message', placeholder: '20:00~24:00'
+      %tr
+        %th      
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = icon('fas', 'image', class: 'icon fa-2x')
+              = f.file_field :image, class: 'hidden'
+      %tr
+        %th        
+          = f.submit 'Send', class: 'form__submit btn btn-dark'

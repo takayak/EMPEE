@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def message_params
     # params.require(:post).permit(:title, :image,:content,:address).merge(user_id: current_user.id)
-    params.require(:post).permit(:title, :image,:content,:address)
+    params.require(:post).permit(:title, :image,:content,:address,:wage,:date,:timezone)
   end
 
   
