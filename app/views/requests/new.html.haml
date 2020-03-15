@@ -1,0 +1,3 @@
+= form_for @request ,url: post_requests_path do |f|
+  = f.text_field :message, class: 'form__message', placeholder: 'type a message'
+  = f.submit 'Send', class: 'form__submit'

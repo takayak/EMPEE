@@ -1,0 +1,21 @@
+%table.table.table-responsive
+  %tr
+    %th
+      = image_tag @post.image.to_s,size:"150x150", alt: "test" ,class: 'post__image'
+  %tr
+    %th
+      タイトル：#{@post.title}
+  %tr
+    %th
+      コンテンツ：#{@post.content}
+  %tr
+    %th
+      = link_to "リクエスト", new_post_request_path(@post.id), class: 'btn btn-primary'
+      = link_to "応募状況", post_requests_path(@post.id), class: 'btn btn-primary'
+  %tr
+    %th
+      - @requests.each do |request|
+        .div
+          =request.id
+          =request.message
+  

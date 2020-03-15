@@ -1,0 +1,35 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color:gray ;
+}
+.hidden{
+  display:none;
+}
+
+.all{
+  .flex{
+    display: flex;
+    .post{
+      margin: 5px;
+      width: 300px;
+      height: 400px;
+      .image{
+        overflow: hidden;
+        border-radius: 20px;
+        width: 200px;
+        height: 200px;
+        .post__image{
+          border-radius: 20px;
+        }
+        .post__image:hover{
+          transform: scale(1.1);
+          transition-duration: 0.3s;
+        }
+      }
+    }
+
+  }
+}

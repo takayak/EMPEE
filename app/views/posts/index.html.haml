@@ -1,0 +1,27 @@
+.user
+  ユーザー名：#{current_user.name}
+.edit
+  = link_to "ユーザー情報編集" ,edit_user_path(current_user) ,class: 'btn btn-primary btn-setting btn-sm'
+  = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm'
+  = link_to "新規作成", new_post_path, class: 'btn btn-primary btn-sm'
+  
+
+.all
+  .flex
+    - @posts.each do |post|
+      .post
+       
+        %table.table.table-hover.table-responsive
+          %tr
+            %th
+              .image
+                = link_to post_path(post.id) do
+                  = image_tag post.image.to_s,size:"200x200", alt: "test" ,class: 'post__image'
+              
+          %tr
+            %td
+              = post.title
+          %tr
+            %td
+              = post.content
+        

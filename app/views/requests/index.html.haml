@@ -1,0 +1,10 @@
+- @requests.each do |request|
+  .div
+    id: #{request.post_id}
+  .div
+    メッセージ #{request.message}
+  %a{:href => "/posts/#{request.post.id}/request/#{request.id}"}= request.post.id
+  -# <a href="/posts/<%= request.post.id %>"><%= post.user.email %></a>
+  -# %a{:href => "/posts/#{request.post.id}"}= post.user.email
+
+  -#  /posts/:post_id/requests/:id(.:format)  
