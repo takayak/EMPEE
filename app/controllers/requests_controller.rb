@@ -17,6 +17,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.post_id = params[:post_id]
+    @request.user_id = current_user.id
     @request.save
     redirect_to posts_path
     # binding.pry

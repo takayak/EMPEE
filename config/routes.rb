@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # root to: 'posts#index'
 
   root "posts#index"
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update,:show ,:index]
   resources :posts, only: [:index, :create,:show,:new] do
     resources :requests, only: [:index, :create,:show,:new]
   end

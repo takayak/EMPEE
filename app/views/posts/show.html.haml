@@ -16,6 +16,7 @@
     %th
       - @requests.each do |request|
         .div
-          =request.id
-          =request.message
+        = link_to request.user.name, user_path(request.user.id), class: 'btn btn-primary'
+        =request.user.name
+        =request.message
   
